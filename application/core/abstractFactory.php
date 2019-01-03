@@ -7,7 +7,5 @@
  */
 abstract class FactoryAbstract
 {
-
     abstract public function create($type, $data);
-
 }
