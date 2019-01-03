@@ -11,6 +11,8 @@ class Controller_Editing extends Controller
 
     function action_index()
     {
+
+		$this->_view->users = (new Models_Create('users', 'user'))->getObject();
 		/**
 		 * Если нажата кнопка редактируем пользователя и обновляем страницу
 		 *
@@ -19,8 +21,8 @@ class Controller_Editing extends Controller
 
 		if(isset($_POST['editingUser'])) {
 				
-			$dataUser = array($_POST['Name'], $_POST['Surname'], $_POST['Email'], $_POST['Position']);
-			$users[$_POST['id']]::edit('users', $dataUser);
+			$dataUser = array($_POST['id'], $_POST['Name'], $_POST['Surname'], $_POST['Email'], $_POST['Position']);
+			Models_User::edit('users', $dataUser);
 			header("Location: /editing");
 			exit();
 		}
@@ -32,8 +34,8 @@ class Controller_Editing extends Controller
          */
 
 		if(isset($_POST['deleteUser'])) {
-				
-			$users[$_POST['id']]::remove('users', $_POST["id"]);
+
+			Models_User::remove('users', $_POST["id"]);
 			header("Location: /editing");
 			exit();
 		}

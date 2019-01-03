@@ -10,7 +10,7 @@ class Controller_NewUser extends Controller
 
     function action_index()
     {
-
+        
         /**
          * Если нажата кнопка добаляем пользователя
          *

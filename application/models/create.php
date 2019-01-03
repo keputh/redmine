@@ -14,17 +14,20 @@ class Models_Create {
 
     protected $objects;
 
-    public function __construct()
+    /**
+     * Models_Create constructor.
+     * @param $table - Название таблицы в базе создаваемого объекта
+     * @param $nameClass - Название айди столбца и название создаваемого класса
+     */
+    public function __construct($table, $nameClass)
     {
-        $connect = ["127.0.0.1", "root", "", "big_base"];
+        $conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
 
-        $conny = mysqli_connect($connect[0],$connect[1],$connect[2],$connect[3]);
-
-        $objects = $conny->query('Select * from users');
+        $objects = $conny->query('Select * from '. $table .' ');
         while($data = mysqli_fetch_array($objects)){
 
             $factory = new Models_Factory();
-            $this->objects[$data['task_id']] = $factory->create('user');
+            $this->objects[$data[$nameClass.'_id']] = $factory->create($nameClass, $data);
         }
     }
 

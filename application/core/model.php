@@ -37,7 +37,7 @@ class Model_DB implements Model
 	 * 
 	 * @return mysql_query(replace) перезапись объекта
 	 */
-	public function edit($table, array $data)
+	public static function edit($table, array $data)
 	{
 		$conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
 		$str = "'" . implode("', '", $data) . "'";
@@ -52,7 +52,7 @@ class Model_DB implements Model
 	 *
 	 * @return mysql_query(delete) удаляем объект из базы
 	 */
-	public function remove($table, $id)
+	public static function remove($table, $id)
 	{
 		$conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
         return $conny->query("delete from ". $table ." where user_id = ". $id ." ");
