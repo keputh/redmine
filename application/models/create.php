@@ -26,8 +26,7 @@ class Models_Create {
         $objects = $conny->query('Select * from '. $table .' ');
         while($data = mysqli_fetch_array($objects)){
 
-            $factory = new Models_Factory();
-            $this->objects[$data[$nameClass.'_id']] = $factory->create($nameClass, $data);
+            $this->objects[$data[$nameClass.'_id']] = (new Models_Factory())->create($nameClass, $data);
         }
     }
 

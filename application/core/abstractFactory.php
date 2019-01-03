@@ -8,14 +8,6 @@
 abstract class FactoryAbstract
 {
 
-    public function create($type, $data)
-    {
-        switch ($type) {
-            case'user':
-                return new Models_User($data);
-            case'task':
-                return new Models_Task($data);
-        }
-    }
+    abstract public function create($type, $data);
 
 }
