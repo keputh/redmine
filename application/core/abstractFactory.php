@@ -12,9 +12,9 @@ abstract class FactoryAbstract
     {
         switch ($type) {
             case'user':
-                return new Models_UserModel();
+                return new Models_UserModel($data);
             case'task':
-                return new Models_TasksModel();
+                return new Models_TasksModel($data);
         }
     }
 

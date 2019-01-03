@@ -10,7 +10,7 @@
  * Вытаскиваем их из базы и заносим в массив
  *
  */
-class Models_TasksModel2 {
+class Models_Create {
 
     protected $objects;
 
@@ -20,10 +20,11 @@ class Models_TasksModel2 {
 
         $conny = mysqli_connect($connect[0],$connect[1],$connect[2],$connect[3]);
 
-        $objects = mysqli_query($conny,'Select * from tasks');
+        $objects = $conny->query('Select * from users');
         while($data = mysqli_fetch_array($objects)){
 
-            $this->objects[$data['task_id']] = new Task($data);
+            $factory = new Models_Factory();
+            $this->objects[$data['task_id']] = $factory->create('user');
         }
     }
 
