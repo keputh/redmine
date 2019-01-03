@@ -4,8 +4,6 @@ include 'interfacemodel.php';
 class Model_DB implements Model
 {	
     public $_data = [];
-	public $objects;
-
 
 	public function __construct($data) 
 	{
@@ -14,11 +12,6 @@ class Model_DB implements Model
 		        $this->_data[$field] = $data[$field];
 			}
 	    }
-	}
-
-	public function getAll()
-	{
-		return $this->objects;
 	}
 
 	/**

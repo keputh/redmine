@@ -11,9 +11,6 @@ class Controller_Editing extends Controller
 
     function action_index()
     {
-		$users = (new Models_Class_UsersModel)->getObject();
-		$this->_view->users = $users;
-
 		/**
 		 * Если нажата кнопка редактируем пользователя и обновляем страницу
 		 *
