@@ -1,0 +1,111 @@
+body {
+	background-color: #e9eaea;
+}
+
+.container {
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.container2 {
+	width: 70%;
+	margin: 0 auto;
+	padding-right: 0px;
+    padding-left: 0px;
+    padding-top:60px;
+}
+
+.articleIndex2 {
+	height: 60%;
+	margin-bottom: 20px;
+	border-radius:10px;
+	margin-top: 10px;
+
+	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+28,ffffff+100&1+0,0+100 */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.72) 28%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0.72) 28%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0.72) 28%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.form-group {
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-top: 5px;
+}
+
+.btn-default {
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-top: 5px;
+}
+	
+table {
+    
+	border-radius:10px;
+}
+
+form {
+	margin-bottom: 0px;
+}
+
+.navbar-header {
+	background-color: #555f67;
+}
+
+.row {
+
+}
+
+.leftBase {
+	height: 900px;
+	padding-left:40px;
+	background-color:white;
+}
+
+.rightBase {
+    padding-left:50px;
+}
+
+.collapse {
+	padding-left: 20px;
+}
+
+.line {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.line:before,
+.line:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+	height: 1px;
+	background: #000;
+	z-index: -1;
+	position: relative;
+	vertical-align: middle;
+}
+
+.line:before {
+	right: 15px;
+	margin: 0 0 0 -100%;
+}
+.line:after {
+	left: 15px;
+	margin: 0 -100% 0 0;
+}
+
+.ul {
+	margin-left: 0px;
+	pd
+}
+
+.li {
+	list-style-type: none;
+}
