@@ -4,7 +4,7 @@ class View
 
 	protected $_data = [];
 
-	function __set($key, $value)
+	public function __set($key, $value)
 	{
 		$this->_data[$key] = $value;
 	}
@@ -17,7 +17,7 @@ class View
 	 * @param string $template_view - получаем имя шаблона вьюшки
 	 * @return вся наша любимая страница
 	 */
-	function generate($content_view, $template_view)
+	public function generate($content_view, $template_view)
 	{
 		$smarty = Registry::get('smarty');
 
