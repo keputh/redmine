@@ -19,8 +19,8 @@ class Controller_NewUser extends Controller
 
         if(isset($_POST['buttonAddUser'])) {
 
-            $dataUser = array($_POST['id'], $_POST['Name'], $_POST['Surname'], $_POST['Email'], $_POST['Position']);
-            Model_DB::add('users', $dataUser);
+            $dataUser = array($_POST['Name'], $_POST['Surname'], $_POST['Email'], $_POST['Position']);
+            Models_User::add('users', $dataUser);
             header("Location: /editing");
             exit();
         }

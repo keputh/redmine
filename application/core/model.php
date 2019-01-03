@@ -1,5 +1,5 @@
 <?php
-include 'interfacemodel.php';
+include 'interfaceModel.php';
 
 class Model_DB implements Model
 {	
@@ -20,18 +20,17 @@ class Model_DB implements Model
 	 * @param string $table
 	 * @param array $data
 	 * 
-	 * @return mysql_query(insert) запись в базу 
+	 * @return mysqli_query(insert) запись в базу
 	 */
     public static function add($table, array $data)
     {
-		$conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
-        $str = "'" . implode("', '", $data) . "'";
-		return $conny->query("insert into ". $table ." values(". $str .")");
+		$conny = new mysqli("127.0.0.1", "root", "", "big_base");
+        $str = "'" . implode($data, "', '") . "'";
+		return $conny->query("INSERT into ". $table ." values(NULL,". $str .")");
     }
 
 	/**
 	 * редактируем объект в базе
-	 *
 	 * @param string $table
 	 * @param array $data
 	 * 
@@ -39,7 +38,7 @@ class Model_DB implements Model
 	 */
 	public static function edit($table, array $data)
 	{
-		$conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
+		$conny = new mysqli("127.0.0.1", "root", "", "big_base");
 		$str = "'" . implode("', '", $data) . "'";
 		return $conny->query("replace into ". $table ." values(". $str .")");
 	}
@@ -54,7 +53,7 @@ class Model_DB implements Model
 	 */
 	public static function remove($table, $id)
 	{
-		$conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
+		$conny = new mysqli("127.0.0.1", "root", "", "big_base");
         return $conny->query("delete from ". $table ." where user_id = ". $id ." ");
 	}
 
