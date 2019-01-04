@@ -85,11 +85,11 @@
             <td> <input type="checkbox" name="option1" value="{$task->_data['task_id']}"></td>
             <td>{$task->_data['task_id']}</td>
             <td>{$task->_data['truck']}</td>
-            <td>{$task->_data['status']}</td>
+            <td>{$task->_data['statusTask']}</td>
             <td>{$task->_data['priority']}</td>
             <td><a href="/tasks/task/{$task->_data['task_id']}">{$task->_data['topic']}</a></td>
             <td>{$task->_data['assigned']}</td>
-            <td>{$task->_data['update']}</td>
+            <td>{$task->_data['updateDate']}</td>
             <td>{$task->_data['tag']}</td>
             <td>{$task->_data['category']}</td>
         </tr>
