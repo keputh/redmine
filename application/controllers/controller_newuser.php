@@ -25,7 +25,7 @@ class Controller_NewUser extends Controller
             exit();
         }
 
-        $this->_view->generate('newuser.tpl', 'template_view.php');
+        $this->_view->generate('newUser.tpl', 'template_view.php');
     }
 
 }
