@@ -15,26 +15,27 @@ class MultiplicationTest extends \Codeception\Test\Unit
     {
     }
 
-    /**
-     * 5$ + 10chf = 10$, если курс обмена 2:1
-     * 5$  * 2 = 10$ - "завершен"
-     *
-     */
-
     // tests
     public function testMultiplication()
     {
-        $five = new models_dollar(5);
-        $product = $five->times(2);
-        $this->assertEquals(10, $product->amount);
-        $product = $five->times(3);
-        $this->assertEquals(15, $product->amount);
+        $five = Money::dollar(5);
+        $this->assertEquals(new Models_dollar(10), $five->times(2));
+        $this->assertEquals(new Models_dollar(15), $five->times(3));
+    }
+
+    public function testFrancMultiplication()
+    {
+        $five = new Models_franc(5);
+        $this->assertEquals(new Models_franc(10), $five->times(2));
+        $this->assertEquals(new Models_franc(15), $five->times(3));
     }
 
     public function testEquality()
     {
-       $this->assertTrue((new models_dollar(5))->equals(new Models_dollar(5)));
-       $this->assertFalse((new models_dollar(5))->equals(new Models_dollar(6)));
+        $this->assertTrue((new Models_dollar(5))->equals(new Models_dollar(5)));
+        $this->assertFalse((new Models_dollar(5))->equals(new Models_dollar(6)));
+        $this->assertTrue((new Models_franc(5))->equals(new Models_franc(5)));
+        $this->assertFalse((new Models_franc(5))->equals(new Models_franc(6)));
     }
 
 }
