@@ -1,6 +1,7 @@
 <?php 
 class Model_DBTest extends \Codeception\Test\Unit
 {
+
     /**
      * @var \UnitTester
      */
@@ -8,12 +9,10 @@ class Model_DBTest extends \Codeception\Test\Unit
     
     protected function _before()
     {
-
     }
 
     protected function _after()
     {
-        
     }
 
     public function testSuccessModel_DB()
@@ -22,4 +21,5 @@ class Model_DBTest extends \Codeception\Test\Unit
         Model_DB::add('users', $data);
         
     }
+    
 }
