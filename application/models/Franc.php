@@ -1,8 +1,13 @@
 <?php
-
-class Models_dollar extends Money
+/**
+ * Created by PhpStorm.
+ * User: Дмитрий
+ * Date: 06.01.2019
+ * Time: 18:47
+ */
+class Models_franc extends money
 {
-    
+
     /**
      * Models_dollar constructor.
      * @param $amount - получаем цену акции
@@ -18,7 +23,7 @@ class Models_dollar extends Money
      */
     public function times($multiplier)
     {
-        return new Models_dollar($this->amount * $multiplier);
+        return new Models_franc($this->amount * $multiplier);
     }
 
 }
