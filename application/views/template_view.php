@@ -31,7 +31,7 @@
 			    <li><a href="/">Домашняя страница<span class="sr-only">(current)</span></a></li>
 			    <li><a href="#">Моя страница</a></li>
 			    <li><a href="#">Проекты</a></li>
-			    <li><a href="#">Помощь</a></li>
+			    <li><a href="/wyCash">Валюта</a></li>
 				<li><a href="/tasks">Задачи</a></li>
 				<li><a href="/editing">Сотрудники</a></li>
 		    </ul>
