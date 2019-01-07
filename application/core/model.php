@@ -14,6 +14,16 @@ class Model_DB implements Model
 	    }
 	}
 
+	public static function create($type, $data)
+	{
+		switch ($type) {
+			case'user':
+				return new Models_User($data);
+			case'task':
+				return new Models_Task($data);
+		}
+	}
+
 	/**
 	 *  Записываем объект в базу
 	 *
