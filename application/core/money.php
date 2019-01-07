@@ -15,6 +15,11 @@ abstract class Money
         return new Models_dollar($amount);
     }
 
+    public static function franc($amount)
+    {
+        return new Models_franc($amount);
+    }
+
     abstract public function times($multiplier);
 
     public function equals($object)
