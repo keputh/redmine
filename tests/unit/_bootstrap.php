@@ -11,4 +11,5 @@ include 'C:\Users\Дмитрий\Desktop\программирование\OSPane
 include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/dollar.php';
 include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/franc.php';
 
+include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/create.php';
 include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/user.php';
