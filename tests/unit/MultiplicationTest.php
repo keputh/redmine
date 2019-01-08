@@ -36,6 +36,13 @@ class MultiplicationTest extends \Codeception\Test\Unit
         $this->assertFalse(Money::dollar(5)->equals(Money::dollar(6)));
         $this->assertTrue(Money::franc(5)->equals(Money::franc(5)));
         $this->assertFalse(Money::franc(5)->equals(Money::franc(6)));
+        $this->assertFalse(Money::franc(5)->equals(Money::dollar(5)), 'Ошбика: Франк равен Доллару, такого быть не должно');
+    }
+
+    public function testCurrency()
+    {
+        $this::assertEquals("USD", Money::dollar(1)->currency());
+        $this::assertEquals("CHF", Money::franc(1)->currency());
     }
 
 }

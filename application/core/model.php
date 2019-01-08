@@ -28,7 +28,7 @@ class Model_DB implements Model
         $str = "'" . implode($data, "', '") . "'";
 		return $conny->query("INSERT into ". $table ." values(NULL,". $str .")");
     }
-	
+
 	/**
 	 * редактируем объект в базе
 	 * @param string $table

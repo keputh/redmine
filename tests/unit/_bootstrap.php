@@ -13,3 +13,4 @@ include 'C:\Users\Дмитрий\Desktop\программирование\OSPane
 
 include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/create.php';
 include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/user.php';
+include 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/models/task.php';
