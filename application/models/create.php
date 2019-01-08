@@ -26,7 +26,17 @@ class Models_Create {
         $objects = $conny->query('Select * from '. $table .' ');
         while($data = mysqli_fetch_array($objects)){
 
-            $this->objects[$data[$nameClass.'_id']] = Model_DB::create($nameClass, $data);
+            $this->objects[$data[$nameClass.'_id']] = $this->create($nameClass, $data);
+        }
+    }
+
+    public static function create($type, $data)
+    {
+        switch ($type) {
+            case'user':
+                return new Models_User($data);
+            case'task':
+                return new Models_Task($data);
         }
     }
 
@@ -34,4 +44,5 @@ class Models_Create {
     {
         return $this->objects;
     }
+
 }
