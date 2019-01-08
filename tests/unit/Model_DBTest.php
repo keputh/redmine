@@ -17,9 +17,6 @@ class Model_DBTest extends \Codeception\Test\Unit
 
     public function testSuccessModel_DB()
     {
-        $data = ['test', 'test', 'test', 'test'];
-        Model_DB::add('users', $data);
-        
     }
     
 }
