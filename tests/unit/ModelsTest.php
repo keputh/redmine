@@ -15,23 +15,27 @@ class ModelsTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testUser()
+    public function testAdd()
     {
-        $data = ['nameTest','surnameTest','email@mail.com','tester'];
-        Models_User::add('users', $data);
-        $data = ['82','nameTest2','surnameTest','email@mail.com','tester'];
-        Models_User::edit('users', $data);
-        $id = '82';
-        Models_User::remove('users', $id);
+        $data = [];
+        Model_DB::add('users', $data);
     }
 
-    public function testTask()
+    public function testEdit()
     {
-        $data = ['truck', 'statusTask', 'priority', 'topic', 'assigned', 'updateDate', 'tag', 'category', 'user_id'];
-        Models_Task::add('tasks', $data);
-        $data = ['82', 'truck2', 'statusTask', 'priority', 'topic', 'assigned', 'updateDate', 'tag', 'category', 'user_id'];
-        Models_Task::edit('tasks', $data);
-        $id = '82';
-        Models_Task::remove('tasks', $id);
+        $data = [];
+        Model_DB::edit('users', $data);
+
+        $dataTask = [];
+        Model_DB::edit('tasks', $dataTask);
+
     }
+
+    public function testRemove()
+    {
+        $id = '';
+        Model_DB::remove('users', $id);
+        Model_DB::remove('tasks', $id);
+    }
+    
 }
