@@ -1,4 +1,5 @@
 <?php
+require_once 'connect.php';
 require_once 'core/model.php';
 require_once 'core/view.php';
 include 'core/registry.php';
