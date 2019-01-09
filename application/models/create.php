@@ -21,16 +21,21 @@ class Models_Create {
      */
     public function __construct($table, $nameClass)
     {
-        $conny = mysqli_connect("127.0.0.1", "root", "", "big_base");
-
+        $conny = Connect::connectDB();
         $objects = $conny->query('Select * from '. $table .' ');
         while($data = mysqli_fetch_array($objects)){
 
             $this->objects[$data[$nameClass.'_id']] = $this->create($nameClass, $data);
         }
+        $conny->close();
+    }
+    
+    public function getObject()
+    {
+        return $this->objects;
     }
 
-    public static function create($type, $data)
+    private function create($type, $data)
     {
         switch ($type) {
             case'user':
@@ -38,11 +43,6 @@ class Models_Create {
             case'task':
                 return new Models_Task($data);
         }
-    }
-
-    public function getObject()
-    {
-        return $this->objects;
     }
 
 }
