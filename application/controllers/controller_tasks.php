@@ -19,6 +19,9 @@ class Controller_Tasks extends Controller
 
     function action_task($objectid)
     {
+        $tasks = (new Models_Create('tasks', 'task'))->getObject();
+
+        $this->_view->task = $tasks[$objectid];
         $this->_view->generate('task.tpl', 'template_view.php');
     }
 
