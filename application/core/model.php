@@ -17,30 +17,30 @@ class Model_DB implements Model
 	/**
 	 *  Записываем объект в базу
 	 *
-	 * @param string $table
-	 * @param array $data
-	 * 
-	 * @return mysqli_query(insert) запись в базу
+	 * @param string $table - получаем название таблицы
+	 * @param array $data - данные которые записываем
+	 *
 	 */
     public static function add($table, array $data)
     {
-		$conny = new mysqli("127.0.0.1", "root", "", "big_base");
-        $str = "'" . implode($data, "', '") . "'";
-		return $conny->query("INSERT into ". $table ." values(NULL,". $str .")");
+		$conny = Connect::connectDB();
+		$conny->query("INSERT into ". $table ." values(NULL,". "'" . implode($data, "', '") . "'" .")");
+		$conny->close();
+		return;
     }
 
 	/**
 	 * редактируем объект в базе
 	 * @param string $table
 	 * @param array $data
-	 * 
-	 * @return mysql_query(replace) перезапись объекта
+	 *
 	 */
 	public static function edit($table, array $data)
 	{
-		$conny = new mysqli("127.0.0.1", "root", "", "big_base");
-		$str = "'" . implode("', '", $data) . "'";
-		return $conny->query("replace into ". $table ." values(". $str .")");
+		$conny = Connect::connectDB();
+		$conny->query("replace into ". $table ." values(". "'" . implode("', '", $data) . "'" .")");
+		$conny->close();
+		return;
 	}
 	
 	/**
@@ -49,12 +49,13 @@ class Model_DB implements Model
 	 * @param string $table - получаем название таблицы
 	 * @param string $id - получаем id объекта
 	 *
-	 * @return mysql_query(delete) удаляем объект из базы
 	 */
 	public static function remove($table, $id)
 	{
-		$conny = new mysqli("127.0.0.1", "root", "", "big_base");
-        return $conny->query("delete from ". $table ." where user_id = ". $id ." ");
+		$conny = Connect::connectDB();
+        $conny->query("delete from ". $table ." where user_id = ". $id ." ");
+		$conny->close();
+		return;
 	}
 
 }
