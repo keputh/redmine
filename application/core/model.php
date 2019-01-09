@@ -53,7 +53,7 @@ class Model_DB implements Model
 	public static function remove($table, $id)
 	{
 		$conny = Connect::connectDB();
-        $conny->query("delete from ". $table ." where user_id = ". $id ." ");
+		$conny->query("delete from ". $table ." where user_id = ". $id ." ");
 		$conny->close();
 		return;
 	}
