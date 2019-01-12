@@ -1,9 +1,8 @@
 <?php
 class Controller_Main extends Controller
 {
-	function action_index()
+	public function action_index()
 	{	
-		$this->view->generate('main.tpl', 'template_view.php');
+		$this->_view->generate('main.tpl', 'template_view.php');
 	}
 }
-?>
