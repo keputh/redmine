@@ -9,7 +9,6 @@ class View
 		$this->_data[$key] = $value;
 	}
 
-
 	/**
 	 * Генерируем страницу, получаем все из контроллера
 	 *
@@ -25,7 +24,7 @@ class View
 			$smarty->assign($key, $value);
 		}
 
-		include 'application/views/'.$template_view;
+		return include 'application/views/'.$template_view;
 	}
 
 }
