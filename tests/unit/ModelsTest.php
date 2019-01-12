@@ -8,34 +8,38 @@ class ModelsTest extends \Codeception\Test\Unit
     
     protected function _before()
     {
+        $conny = Connect::connectDB();
+        $conny->query('truncate table users');
+        $conny->close();
+
     }
 
     protected function _after()
     {
+
     }
 
     // tests
     public function testAdd()
     {
-        $data = [];
-        Model_DB::add('users', $data);
+        $addUser = Models_User::add('users', ['Дима','Давыденко2','kroops02@gmail.com', 'саппорт']);
+        $this->assertEquals('Запрос успешен', $addUser);
+        $this->assertEquals('Запрос не успешен', Models_User::edit('users2', ['1',]));
     }
 
     public function testEdit()
     {
-        $data = [];
-        Model_DB::edit('users', $data);
-
-        $dataTask = [];
-        Model_DB::edit('tasks', $dataTask);
-
+        $editUser = Models_User::edit('users', ['1','Дима','Давыденко2','kroops02@gmail.com', 'саппорт']);
+        $this->assertEquals('Запрос успешен', $editUser);
+        $this->assertEquals('Запрос не успешен', Models_User::edit('users2', ['1',]));
     }
 
     public function testRemove()
     {
-        $id = '';
-        Model_DB::remove('users', $id);
-        Model_DB::remove('tasks', $id);
+        Models_User::add('users', ['Дима','Давыденко','kroops02@gmail.com', 'саппорт']);
+        $deleteUser = Models_User::remove('users', '1');
+        $this->assertEquals('Запрос успешен', $deleteUser);
+        $this->assertEquals('Запрос не успешен', Models_User::remove('users2', '1'));
     }
     
 }
