@@ -1,16 +1,16 @@
 <?php
 class Controller {
 	
-	public $view;
+	protected $_view;
 	
 	public function __construct()
 	{
-		$this->view = new View();
+		$this->_view = new View();
 	}
-	
+
 	public function action_index()
 	{
-		
+
 	}
 
 }
