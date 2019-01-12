@@ -2,21 +2,9 @@
 
 class Controller_NewUser extends Controller
 {
-
-    function __construct()
+    public function action_index()
     {
-        $this->_view  = new View();
-    }
-
-    function action_index()
-    {
-        
-        /**
-         * Если нажата кнопка добаляем пользователя
-         *
-         *
-         */
-
+        //Если нажата кнопка добаляем пользователя
         if(isset($_POST['buttonAddUser'])) {
 
             $dataUser = array($_POST['Name'], $_POST['Surname'], $_POST['Email'], $_POST['Position']);

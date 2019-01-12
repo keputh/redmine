@@ -7,17 +7,8 @@
  */
 class Controller_wyCash extends Controller
 {
-
-    public $_view;
-
-    function __construct()
+    public function action_index()
     {
-        $this->_view = new View();
-    }
-
-    function action_index()
-    {
-        $this->_view->dollar = new model_dollar;
         $this->_view->generate('wyCash.tpl', 'template_view.php');
     }
 
