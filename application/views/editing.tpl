@@ -1,3 +1,28 @@
+<script>
+    <!--Кривое удаление сотрудника-->
+    function buttonClick(button, id) {
+        if (!confirm('удалить сотрудника?')){
+            return false;
+        }
+
+        $.post(
+             "/editing",
+            {
+                del: id
+            }
+        ).done(function(data){
+            alert('Сотрудник удален');
+        }).fail(function(data){
+            alert('ошибка');
+        });
+    }
+
+    $(document).ready(function() {
+        $('.row-remove').click(function() {
+            $(this).closest('tr').remove(); // или $(this).parent().parent().remove();
+        });
+    });
+</script>
 
 <h1>Сотрудники</h1>
 
@@ -32,7 +57,7 @@
                      <button type='submit' class='btn btn-primary' name='editingUser'>
                          <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
                      </button>
-                     <button type='submit' class='btn btn-primary' name='deleteUser'>
+                     <button type='button' class='row-remove' onclick="buttonClick(this, {$user->_data['user_id']})">
                          <span class='glyphicon glyphicon-trash' aria-hidden='true'></span>
                      </button>
                  </td>
@@ -56,3 +81,15 @@
          {/if}
          {/foreach}
     </table>
+
+<table>
+    <tr>
+        <td>Первый ряд</td>
+        <td><a href="#" class="row-remove">Удалить</a></td>
+    </tr>
+    <tr>
+        <td>Второй ряд</td>
+        <td><a href="#" class="row-remove">Удалить</a></td>
+    </tr>
+</table>
+

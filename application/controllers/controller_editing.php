@@ -16,12 +16,11 @@ class Controller_Editing extends Controller
 		}
 
 		//Если нажата кнопка удаляем пользователя и обновляем страницу
-		if(isset($_POST['deleteUser'])) {
+		if(isset($_POST["del"])) {
 
-			Models_User::remove('users', $_POST["id"]);
-			header("Location: /editing");
-			exit();
+			Models_User::remove('users', $_POST["del"]);
 		}
+
 
         return $this->_view->generate('editing.tpl', 'template_view.php');
     }
