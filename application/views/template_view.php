@@ -9,6 +9,7 @@
 		<meta charset="UTF-8">
 		<link href="/static/packages/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="static/style/style.css">
+		<script src="/static/design/jquery-3.3.1.js"></script>
     </head>
 	
     <body>
