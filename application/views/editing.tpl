@@ -1,5 +1,5 @@
 <script>
-    <!--Удаление сотрудника из базы-->
+    <!--Удаление сотрудника из базы и динамически с страницы-->
     function buttonClick(button, id) {
         if (!confirm('удалить сотрудника?')){
             return false;
@@ -12,17 +12,12 @@
             }
         ).done(function(data){
             alert(data);
+            (button).closest('tr').remove();
         }).fail(function(data){
             alert('ошибка');
         });
     }
 
-    <!--Недоработанное динамическое удаление с страницы-->
-    $(document).ready(function() {
-        $('.row-remove').click(function() {
-            $(this).closest('tr').remove(); // или $(this).parent().parent().remove();
-        });
-    });
 </script>
 
 <h1>Сотрудники</h1>
