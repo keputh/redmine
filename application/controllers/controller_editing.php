@@ -19,6 +19,8 @@ class Controller_Editing extends Controller
 		if(isset($_POST["del"])) {
 
 			Models_User::remove('users', $_POST["del"]);
+			echo 'пользователь удален';
+			exit();
 		}
 
 

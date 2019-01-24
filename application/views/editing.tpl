@@ -1,5 +1,5 @@
 <script>
-    <!--Кривое удаление сотрудника-->
+    <!--Удаление сотрудника из базы-->
     function buttonClick(button, id) {
         if (!confirm('удалить сотрудника?')){
             return false;
@@ -11,12 +11,13 @@
                 del: id
             }
         ).done(function(data){
-            alert('Сотрудник удален');
+            alert(data);
         }).fail(function(data){
             alert('ошибка');
         });
     }
 
+    <!--Недоработанное динамическое удаление с страницы-->
     $(document).ready(function() {
         $('.row-remove').click(function() {
             $(this).closest('tr').remove(); // или $(this).parent().parent().remove();
@@ -81,15 +82,4 @@
          {/if}
          {/foreach}
     </table>
-
-<table>
-    <tr>
-        <td>Первый ряд</td>
-        <td><a href="#" class="row-remove">Удалить</a></td>
-    </tr>
-    <tr>
-        <td>Второй ряд</td>
-        <td><a href="#" class="row-remove">Удалить</a></td>
-    </tr>
-</table>
 
