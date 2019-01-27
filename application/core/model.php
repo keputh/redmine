@@ -13,7 +13,11 @@ class Model_DB implements Model
     public static function add($table, array $data)
     {
 		$conny = Connect::connectDB();
-		$conny->query("INSERT into ". $table ." values(NULL,". "'" . implode($data, "', '") . "'" .")");
+		$query = (new sql())
+			->insert($table)
+			->values($data);
+
+		$conny->query($query);
         $result = Connect::infoConnect($conny->affected_rows);
 		$conny->close();
 		return $result ;
@@ -27,7 +31,11 @@ class Model_DB implements Model
 	public static function edit($table, array $data)
 	{
 		$conny = Connect::connectDB();
-		$conny->query("replace into ". $table ." values(". "'" . implode("', '", $data) . "'" .")");
+		$query = (new sql())
+			->replace($table)
+			->replaceValues($data);
+		
+		$conny->query($query);
 		$result = Connect::infoConnect($conny->affected_rows);
 		$conny->close();
 		return $result ;
@@ -41,10 +49,15 @@ class Model_DB implements Model
 	public static function remove($table, $id)
 	{
 		$conny = Connect::connectDB();
-		$conny->query("delete from ". $table ." where user_id = ". $id ." ");
+		$query = (new sql())
+			->delete()
+			->from($table)
+		    ->where('user_id = '. $id);
+
+		$conny->query($query);
 		$result = Connect::infoConnect($conny->affected_rows);
 		$conny->close();
-		return $result ;
+		return $result;
 	}
 
 }

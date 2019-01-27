@@ -22,7 +22,11 @@ class Models_Create {
     public function __construct($table, $nameClass)
     {
         $conny = Connect::connectDB();
-        $objects = $conny->query('Select * from '. $table .' ');
+        $query = (new sql())
+               ->select(['*'])
+               ->from($table);
+        
+        $objects = $conny->query($query);
         while($data = mysqli_fetch_array($objects)){
 
             $this->objects[$data[$nameClass.'_id']] = $this->create($nameClass, $data);
