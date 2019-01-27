@@ -17,11 +17,11 @@ Class Connect
     public static function infoConnect($i)
     {
         if($i > 0) {
-            return 'Запрос успешен';
+            return true;
         }
 
         else {
-            return 'Запрос не успешен';
+            return false;
         }
     }
 }
