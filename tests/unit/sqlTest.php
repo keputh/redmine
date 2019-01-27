@@ -39,7 +39,7 @@ class sqlTest extends \Codeception\Test\Unit
     {
         $queryInsert = (new sql())
             ->insert ('foobar')
-            ->values (['Привет','Пока']);
+            ->insertValues (['Привет','Пока']);
 
         $this->assertSame("INSERT into foobar VALUES (NULL, 'Привет', 'Пока')",(string) $queryInsert);
     }
@@ -48,7 +48,7 @@ class sqlTest extends \Codeception\Test\Unit
     {
         $queryInsert = (new sql())
             ->replace ('foobar')
-            ->replaceValues (['3', 'Привет', 'Пока']);
+            ->Values (['3', 'Привет', 'Пока']);
 
         $this->assertSame("REPLACE into foobar VALUES ('3', 'Привет', 'Пока')",(string) $queryInsert);
     }

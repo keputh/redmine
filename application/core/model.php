@@ -15,7 +15,7 @@ class Model_DB implements Model
 		$conny = Connect::connectDB();
 		$query = (new sql())
 			->insert($table)
-			->values($data);
+			->insertValues($data);
 
 		$conny->query($query);
         $result = Connect::infoConnect($conny->affected_rows);
@@ -33,8 +33,8 @@ class Model_DB implements Model
 		$conny = Connect::connectDB();
 		$query = (new sql())
 			->replace($table)
-			->replaceValues($data);
-		
+			->Values($data);
+
 		$conny->query($query);
 		$result = Connect::infoConnect($conny->affected_rows);
 		$conny->close();
