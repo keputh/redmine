@@ -1,8 +1,9 @@
 <?php
 require_once 'connect.php';
+require_once 'core/sql.php';
 require_once 'core/model.php';
 require_once 'core/view.php';
-include 'core/registry.php';
+require_once 'core/registry.php';
 require_once 'vendor/autoload.php';
 spl_autoload_register(function($className) {
 		$classParts = explode('_',$className);

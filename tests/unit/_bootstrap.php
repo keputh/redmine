@@ -8,6 +8,7 @@
 
 $cd = 'C:\Users\Дмитрий\Desktop\программирование\OSPanel\domains\redmine\application/';
 include 'connect.php';
+require_once $cd .'core/sql.php';
 require_once $cd .'core/model.php';
 require_once $cd .'core/money.php';
 require_once $cd .'core/view.php';
