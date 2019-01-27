@@ -17,10 +17,17 @@ class Controller_Editing extends Controller
 
 		//Если нажата кнопка удаляем пользователя и обновляем страницу
 		if(isset($_POST["del"])) {
+			$result = Models_User::remove('users', $_POST["del"]);
 
-			Models_User::remove('users', $_POST["del"]);
-			echo 'пользователь удален';
-			exit();
+			if ($result) {
+				echo 'Пользователь успешно удален';
+				exit();
+			}
+
+			else{
+			    echo 'Удаление не произошло';
+			    exit();
+			}
 		}
 
 
