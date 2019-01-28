@@ -105,7 +105,7 @@ Class sql
     public function __toString()
     {
         $rawQuery = $this->gather();
-        return $stringQuery = $this->query($rawQuery);
+        return $this->query($rawQuery);
     }
 
     /**
@@ -125,7 +125,7 @@ Class sql
         if ($this->_where   != null) $query[] = 'WHERE';
         if ($this->_values  != null) $query[] = 'VALUES';
 
-        return $query = implode($query, " %s ") . " %s";
+        return implode($query, " %s ") . " %s";
     }
 
     /**
